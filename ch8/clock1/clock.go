@@ -1,9 +1,11 @@
 package main
 
 import (
+	"fmt"
 	"io"
 	"log"
 	"net"
+	"os"
 	"time"
 )
 
@@ -30,6 +32,9 @@ func handleConn(c net.Conn) {
 		if err != nil {
 			return
 		}
+		// 这个函数会阻塞，直到遇到一个EOF才返回（ctrl+D）
+		io.Copy(os.Stdout, c)
+		fmt.Println("got message!")
 		time.Sleep(time.Second)
 	}
 }
