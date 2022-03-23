@@ -10,7 +10,7 @@
             "request": "launch",
             "mode": "auto",
             "program": "${file}",
-            "args": ["repo:golang/go", "is:open", "json", "decoder"]
+            // "args": ["repo:golang/go", "is:open", "json", "decoder"]
         }
     ]
 }
